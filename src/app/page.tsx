@@ -1,6 +1,8 @@
 import { type FC } from "react";
 
 const Home: FC = () => {
+  let age = 30;
+  // age = "thirty";
   return (
     <main>
       <div className="flex justify-center items-center h-screen">
