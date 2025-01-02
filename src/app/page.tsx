@@ -1,7 +1,7 @@
 import { type FC } from "react";
 
 const Home: FC = () => {
-  let age = 30;
+  // let age = 30;
   // age = "thirty";
   return (
     <main>
