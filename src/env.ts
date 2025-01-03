@@ -3,16 +3,10 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    /**
-     * T3 Env テスト用のURLです
-     */
     DEBUG_URL: z.string().url(),
-    /**
-     * 環境
-     */
     NODE_ENV: z
       .enum(["development", "test", "production"])
-      .default("development"),
+      .default("production"),
   },
   client: {
     // NEXT_PUBLIC_CLIENTVAR: z.string(),
