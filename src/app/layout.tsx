@@ -15,4 +15,4 @@ export default function RootLayout(props: RootLayoutProps) {
       <body className="">{props.children}</body>
     </html>
   );
-};
+}

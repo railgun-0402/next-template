@@ -3,8 +3,8 @@ import { fileURLToPath } from "url";
 import { FlatCompat } from "@eslint/eslintrc";
 import typescript from "@typescript-eslint/eslint-plugin";
 import typescriptParser from "@typescript-eslint/parser";
-import unicorn from "eslint-plugin-unicorn";
 import importPlugin from "eslint-plugin-import";
+import unicorn from "eslint-plugin-unicorn";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -19,9 +19,9 @@ const eslintConfig = [
   {
     files: ["**/*.ts", "**/*.tsx"],
     plugins: {
-      "@typescript-eslint": typescript,   // TSのESLintルール
-      "unicorn": unicorn,                 // JSルール
-      "import": importPlugin,             // export/importに関するルール
+      "@typescript-eslint": typescript, // TSのESLintルール
+      unicorn: unicorn, // JSルール
+      import: importPlugin, // export/importに関するルール
     },
     languageOptions: {
       parser: typescriptParser, // TSのコード解析パーサー
@@ -42,7 +42,10 @@ const eslintConfig = [
           fixStyle: "inline-type-imports",
         },
       ],
-      "@typescript-eslint/no-unused-vars": ["warn", { argsIgnorePattern: "^_" }], // 未使用変数を警告するが、「_」で始まる引数は無視する
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ], // 未使用変数を警告するが、「_」で始まる引数は無視する
       "@typescript-eslint/require-await": "off",
       "@typescript-eslint/no-misused-promises": [
         // Promiseの誤用を防ぐ
@@ -59,7 +62,7 @@ const eslintConfig = [
         },
       ],
       "func-style": ["error", "declaration", { allowArrowFunctions: false }],
-      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }],     // arrow functionを推奨
+      "prefer-arrow-callback": ["error", { allowNamedFunctions: false }], // arrow functionを推奨
       "import/no-default-export": "error", // デフォルトエクスポートを禁止する
     },
   },
@@ -72,13 +75,13 @@ const eslintConfig = [
       "tailwind.config.ts",
     ],
     rules: {
-      "import/no-default-export": "off",        // これらのファイルではデフォルトエクスポートを許可
-      "import/prefer-default-export": "error",  // デフォルトエクスポート推奨
+      "import/no-default-export": "off", // これらのファイルではデフォルトエクスポートを許可
+      "import/prefer-default-export": "error", // デフォルトエクスポート推奨
     },
   },
   {
-    ignores: ["src/components/ui/*", "*.md"]
-  }
+    ignores: ["src/components/ui/*", "*.md"],
+  },
 ];
 
 export default eslintConfig;
