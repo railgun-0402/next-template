@@ -4,7 +4,7 @@ import { z } from "zod";
 export const env = createEnv({
   server: {
     /**
-     * T3 Env テスト用のURLです
+     * T3 Env テスト用のURL
      */
     DEBUG_URL: z.string().url(),
     /**
