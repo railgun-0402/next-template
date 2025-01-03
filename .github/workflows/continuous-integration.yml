@@ -11,6 +11,7 @@ on:
 env:
   NODE_VERSION: "20.0.0"
   PNPM_VERSION: "9.15.0"
+  DEBUG_URL: "http://localhost:8000/dev"
 
 jobs:
   setup:
